@@ -48,14 +48,14 @@ def play_game()-> None:
         won, guesses, chosen_int = guessing_game(max_value, attempts=attempts)
 
         if not won:
-            assert chosen_int not in guesses, "ERROR: in game function."
+            assert chosen_int not in guesses, "ERROR: in game function, your guess was incorrect but there is an error"
             
             play_again: str = input("Do you want to play again? (y/n): ").strip().lower()
             if play_again != 'y':
                 print("Thanks for playing! Goodbye!")
                 break
         else:
-            assert chosen_int in guesses, "ERROR: in game function."
+            assert chosen_int in guesses, "ERROR: in game function, your guess was correct but there is an error"
             print("Congratulations! You guessed the number correctly!")
             break
 
