@@ -6,7 +6,7 @@ def guessing_game(max: int, *, attempts: int) -> tuple[bool, tuple[int, ...], in
     chosen_int: int = int(np.random.randint(1,max + 1))
     guesses: List[int] = []
 
-    print(f"\nYou have chosen a number between 1 and {max}.")
+    print(f"\nPlease choose a number between 1 and {max}.")
     print(f"You have {attempts} attempts to guess it.\n")
 
     remaining_attempts: int = attempts
@@ -50,8 +50,8 @@ def play_game()-> None:
         if not won:
             assert chosen_int not in guesses, "ERROR: in game function, your guess was incorrect but there is an error"
             
-            play_again: str = input("Do you want to play again? (y/n): ").strip().lower()
-            if play_again != 'y':
+            play_again: str = input("Do you want to play again? (yes/no): ").strip().lower()
+            if play_again.lower() != "yes":
                 print("Thanks for playing! Goodbye!")
                 break
         else:
